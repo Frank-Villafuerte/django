@@ -10,13 +10,24 @@
 <body>
     <div class="contenedor-lista">
         <h1>Lista de Cursos</h1>
-        <a class="btn" href="{% url 'crear_alumno' %}">Crear nuevo alumno</a>
-        <ul>
-            {% for curso in cursos %}
-                <li>{{ curso.nombre }} - Código: {{ curso.codigo }}</li>
-            {% endfor %}
-        </ul>
         <a class="btn" href="{% url 'crear_curso' %}">Crear nuevo curso</a>
+        <table class="tabla">
+            <thead>
+                <tr>
+                    <th>Curso</th>
+                    <th>Código</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for curso in cursos %}
+                    <tr>
+                        <td>{{ curso.nombre }}</td>
+                        <td>{{ curso.codigo }}</td>
+                    </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+        
     </div>
 </body>
 </html>

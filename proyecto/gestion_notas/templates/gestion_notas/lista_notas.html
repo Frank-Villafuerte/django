@@ -10,13 +10,26 @@
 <body>
     <div class="contenedor-lista">
         <h1>Lista de Notas</h1>
-        <a class="btn" href="{% url 'crear_alumno' %}">Crear nuevo alumno</a>
-        <ul>
-            {% for nota in notas %}
-                <li>{{ nota.alumno }} - {{ nota.curso }}: {{ nota.nota }}</li>
-            {% endfor %}
-        </ul>
         <a class="btn" href="{% url 'crear_nota' %}">Crear nueva nota</a>
+        <table class="tabla">
+            <thead>
+                <tr>
+                    <th>Alumno</th>
+                    <th>Curso</th>
+                    <th>Nota</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for nota in notas %}
+                    <tr>
+                        <td>{{ nota.alumno }}</td>
+                        <td>{{ nota.curso }}</td>
+                        <td>{{ nota.nota }}</td>
+                    </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+        
     </div>
 </body>
 </html>
