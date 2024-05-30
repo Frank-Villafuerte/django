@@ -1,15 +1,22 @@
+{% load static %}
 <!DOCTYPE html>
 <html>
 <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{% static 'estilos/listas.css' %}">
     <title>Lista de Alumnos</title>
 </head>
 <body>
-    <h1>Lista de Alumnos</h1>
-    <ul>
-        {% for alumno in alumnos %}
-            <li>{{ alumno.nombre }} {{ alumno.apellido }} - Matricula: {{ alumno.matricula }}</li>
-        {% endfor %}
-    </ul>
-    <a href="{% url 'crear_alumno' %}">Crear nuevo alumno</a>
+    <div class="contenedor-lista">
+        <h1>Lista de Alumnos</h1>
+        <a class="btn" href="{% url 'crear_alumno' %}">Crear nuevo alumno</a>
+        <ul>
+            {% for alumno in alumnos %}
+                <li>{{ alumno.nombre }} {{ alumno.apellido }} - Matricula: {{ alumno.matricula }}</li>
+            {% endfor %}
+        </ul>
+        
+    </div>
 </body>
 </html>

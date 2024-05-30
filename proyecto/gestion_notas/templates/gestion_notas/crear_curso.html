@@ -1,15 +1,21 @@
+{% load static %}
 <!DOCTYPE html>
 <html>
 <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{% static 'estilos/formulario.css' %}">
     <title>Crear Curso</title>
 </head>
 <body>
-    <h1>Crear Curso</h1>
-    <form method="post">
-        {% csrf_token %}
-        {{ form.as_p }}
-        <button type="submit">Guardar</button>
-    </form>
-    <a href="{% url 'lista_cursos' %}">Ver todos los cursos</a>
+    <div class="formulario-contenedor">
+        <h1>Crear Curso</h1>
+        <form method="post">
+            {% csrf_token %}
+            {{ form.as_p }}
+            <button type="submit">Guardar</button>
+        </form>
+        <a class="btn" href="{% url 'lista_cursos' %}">Ver todos los cursos</a>
+    </div>
 </body>
 </html>
