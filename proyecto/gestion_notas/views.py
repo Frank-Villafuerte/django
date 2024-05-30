@@ -10,11 +10,11 @@ def crear_alumno(request):
             return redirect('lista_alumnos')
     else:
         form = AlumnoForm()
-    return render(request, 'gestion/crear_alumno.html', {'form': form})
+    return render(request, 'gestion_notas/crear_alumno.html', {'form': form})
 
 def lista_alumnos(request):
     alumnos = Alumno.objects.all()
-    return render(request, 'gestion/lista_alumnos.html', {'alumnos': alumnos})
+    return render(request, 'gestion_notas/lista_alumnos.html', {'alumnos': alumnos})
 
 def crear_curso(request):
     if request.method == 'POST':
@@ -24,11 +24,11 @@ def crear_curso(request):
             return redirect('lista_cursos')
     else:
         form = CursoForm()
-    return render(request, 'gestion/crear_curso.html', {'form': form})
+    return render(request, 'gestion_notas/crear_curso.html', {'form': form})
 
 def lista_cursos(request):
     cursos = Curso.objects.all()
-    return render(request, 'gestion/lista_cursos.html', {'cursos': cursos})
+    return render(request, 'gestion_notas/lista_cursos.html', {'cursos': cursos})
 
 def crear_nota(request):
     if request.method == 'POST':
@@ -38,11 +38,11 @@ def crear_nota(request):
             return redirect('lista_notas')
     else:
         form = NotaForm()
-    return render(request, 'gestion/crear_nota.html', {'form': form})
+    return render(request, 'gestion_notas/crear_nota.html', {'form': form})
 
 def lista_notas(request):
     notas = Nota.objects.all()
-    return render(request, 'gestion/lista_notas.html', {'notas': notas})
+    return render(request, 'gestion_notas/lista_notas.html', {'notas': notas})
 
 
 
